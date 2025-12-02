@@ -1,4 +1,5 @@
 import type { ReactNode } from 'react'
+import { useTranslation } from 'react-i18next'
 
 function Feature({ title, desc, icon }: { title: string; desc: string; icon: ReactNode }) {
   return (
@@ -15,29 +16,30 @@ function Feature({ title, desc, icon }: { title: string; desc: string; icon: Rea
 }
 
 export default function Pourquoi() {
+  const { t } = useTranslation()
   return (
     <section id="pourquoi" className="section bg-[--color-graybg]">
       <div className="container-wrap">
-        <h2 className="section-title">Pourquoi confier vos projets fonciers à la SNDP ?</h2>
+        <h2 className="section-title">{t('why.title')}</h2>
         <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           <Feature
-            title="Sécurisation juridique"
-            desc="Titres fonciers, accompagnement notarial, vérification des antécédents fonciers."
+            title={t('why.secure.title')}
+            desc={t('why.secure.desc')}
             icon={<ShieldIcon />}
           />
           <Feature
-            title="Approche long terme"
-            desc="Nous développons des domaines pensés pour 20, 50, 100 ans."
+            title={t('why.longterm.title')}
+            desc={t('why.longterm.desc')}
             icon={<ClockIcon />}
           />
           <Feature
-            title="Réseau local"
-            desc="Chefferies, mairies, cadastre, autorités administratives : un ancrage local fort."
+            title={t('why.local.title')}
+            desc={t('why.local.desc')}
             icon={<MapPinIcon />}
           />
           <Feature
-            title="Transparence & traçabilité"
-            desc="Dossiers complets, documents clairs, suivi de chaque étape de la transaction."
+            title={t('why.transparency.title')}
+            desc={t('why.transparency.desc')}
             icon={<ListCheckIcon />}
           />
         </div>
